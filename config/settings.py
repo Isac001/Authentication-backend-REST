@@ -25,19 +25,41 @@ SECRET_KEY = 'django-insecure-kf@qpb!f)ron-4!+i6t!ww&kf4z&tow)5(&*tz9=c2tp!)b8m8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "*"
+]
 
 
 # Application definition
-
 INSTALLED_APPS = [
+
+    # Django Apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Libs apps
+    'rest_framework',
+    'rest_framework_simplejwt',
+
+    # Modules Apps
+    'autentication_module',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -75,10 +97,16 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'auth',
+        'USER': 'auth',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
+
+AUTH_USER_MODEL = 'autentication_module.User'
 
 
 # Password validation

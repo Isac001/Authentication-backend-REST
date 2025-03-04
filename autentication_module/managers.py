@@ -4,6 +4,9 @@ from django.utils.translation import gettext_lazy as _
 
 class UserManager(BaseUserManager):
 
+    def get_by_natural_key(self, user_email):
+        return self.get(user_email=user_email)
+
     def create_user(self, user_email, password, **extra_fields):
 
         if not user_email:
@@ -11,12 +14,9 @@ class UserManager(BaseUserManager):
             raise ValueError(_("The email must be set"))
 
         email = self.normalize_email(user_email)
-
         user = self.model(user_email=email, **extra_fields)
-
         user.set_password(password)
-
-        user.save()
+        user.save(using=self._db)
 
         return user
     
