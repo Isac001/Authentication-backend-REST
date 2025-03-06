@@ -29,6 +29,7 @@ INSTALLED_APPS = [
 
     # Modules Apps
     'authentication',
+    'simple_crud',
 ]
 
 REST_FRAMEWORK = {

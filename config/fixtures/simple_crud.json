@@ -1,0 +1,29 @@
+[
+    {
+        "model": "simple_crud.SimpleCRUD",
+        "pk": 1,
+        "fields": {
+            "name_item": "Notebook",
+            "quantity_item": 5,
+            "have_item": true
+        }
+    },
+    {
+        "model": "simple_crud.SimpleCRUD",
+        "pk": 2,
+        "fields": {
+            "name_item": "Smartphone",
+            "quantity_item": 10,
+            "have_item": false
+        }
+    },
+    {
+        "model": "simple_crud.SimpleCRUD",
+        "pk": 3,
+        "fields": {
+            "name_item": "Tablet",
+            "quantity_item": 7,
+            "have_item": true
+        }
+    }
+]
