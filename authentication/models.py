@@ -5,7 +5,7 @@ from django.utils import timezone
 from django.db import models
 
 # Module Imports
-from autentication_module.managers import UserManager
+from authentication.managers import UserManager
 
 # User Class 
 class User(AbstractBaseUser, PermissionsMixin):
@@ -21,18 +21,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(_("Active?"), default=True)
     is_trusty = models.BooleanField(_("Trusty?"), default=True)
 
-    groups = models.ManyToManyField(
-        "auth.Group",
-        related_name="custom_user_groups",
-        blank=True
-    )
-
-    user_permissions = models.ManyToManyField(
-        "auth.Permission",
-        related_name="custom_user_permissions",
-        blank=True
-    )
-
+   
     # Authentication field
     USERNAME_FIELD = "user_email"
     REQUIRED_FIELDS = ["user_cpf"]
@@ -47,8 +36,8 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     class Meta:
 
-        db_table = "autentication_module"
-        app_label = "autentication_module"
+        db_table = "authentication"
+        app_label = "authentication"
         constraints = [
             models.UniqueConstraint(fields=['user_cpf'], name='unique_cpf'),
             models.UniqueConstraint(fields=['user_email'], name='unique_email')

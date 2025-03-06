@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 class AutenticationModuleConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'autentication_module'
+    name = 'authentication'

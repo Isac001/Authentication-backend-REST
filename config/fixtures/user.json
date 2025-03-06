@@ -1,6 +1,6 @@
 [
     {
-        "model": "autentication_module.User",
+        "model": "authentication.User",
         "pk": 1,
         "fields": {
             "user_name": "admin",
