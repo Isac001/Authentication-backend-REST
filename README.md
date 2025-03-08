@@ -105,7 +105,7 @@ Inicie o servidor:
 python3 manage.py runserver
 ```
 
-A API estará disponível em `http://127.0.0.1:8000/`.
+A API estará disponível em `http://<ip_da_sua_maquina>:8000/`.
 
 Agora sua API de autenticação está pronta para uso!
 
