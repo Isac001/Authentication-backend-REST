@@ -1,4 +1,4 @@
-# Autentica-o-Simples-com-Django-REST
+# Authentication-backend-REST
 
 Este repositório demonstra como criar uma API capaz de realizar autenticação de usuários utilizando Django REST Framework.
 
