@@ -35,8 +35,7 @@ Antes de iniciar, certifique-se de que possui os seguintes requisitos instalados
 Clone o repositório e navegue até a pasta do projeto:
 
 ```bash
-git clone https://github.com/SeuUsuario/Autentica-o-Simples-com-Django-REST.git
-cd Autentica-o-Simples-com-Django-REST
+git clone https://github.com/Isac001/Authentication-backend-REST.git
 ```
 
 Crie e ative um ambiente virtual:
