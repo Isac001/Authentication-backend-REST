@@ -9,6 +9,7 @@ from .serializers import CustomTokenObtainSerializer
 # API view for handling user authentication and token generation
 class CustomTokenObtainView(APIView):
 
+
     # Handles POST requests for user authentication
     def post(self, request):
         
