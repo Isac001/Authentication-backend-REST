@@ -8,7 +8,7 @@ from .models import SimpleCRUD
 from .serializers import SimpleCRUDSerializer
 
 # List View: Handles GET requests to retrieve all records
-class SimpleCRUDList(generics.ListAPIView):
+class SimpleCRUDListView(generics.ListAPIView):
 
     # Querying all objects from the database
     queryset = SimpleCRUD.objects.all()
@@ -32,7 +32,7 @@ class SimpleCRUDList(generics.ListAPIView):
         return response.Response(serializer.data, status=status.HTTP_200_OK)
     
 # Detail View: Handles GET requests to retrieve a single record by its ID
-class SimpleCRUDDetail(generics.RetrieveAPIView):
+class SimpleCRUDDetailView(generics.RetrieveAPIView):
 
     queryset = SimpleCRUD.objects.all()
     serializer_class = SimpleCRUDSerializer
@@ -50,7 +50,7 @@ class SimpleCRUDDetail(generics.RetrieveAPIView):
             return response.Response(data="Object not found", status=status.HTTP_200_OK)
         
 # Create View: Handles POST requests to create a new record
-class SimpleCRUDCreate(generics.CreateAPIView):
+class SimpleCRUDCreateView(generics.CreateAPIView):
 
     queryset = SimpleCRUD.objects.all()
     serializer_class = SimpleCRUDSerializer
@@ -71,7 +71,7 @@ class SimpleCRUDCreate(generics.CreateAPIView):
             return response.Response(data=serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
 # Update View: Handles PUT requests to update an existing record
-class SimpleCRUDUpdate(generics.RetrieveUpdateAPIView):
+class SimpleCRUDUpdateView(generics.RetrieveUpdateAPIView):
 
     queryset = SimpleCRUD.objects.all()
     serializer_class = SimpleCRUDSerializer
@@ -95,7 +95,7 @@ class SimpleCRUDUpdate(generics.RetrieveUpdateAPIView):
             return response.Response(data=serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 # Delete View: Handles DELETE requests to remove a record
-class SimpleCRUDDelete(generics.RetrieveDestroyAPIView):
+class SimpleCRUDDeleteView(generics.RetrieveDestroyAPIView):
 
     queryset = SimpleCRUD.objects.all()
     serializer_class = SimpleCRUDSerializer
