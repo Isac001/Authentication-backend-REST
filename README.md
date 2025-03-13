@@ -102,7 +102,7 @@ python3 manage.py loaddata fixtures.json
 Inicie o servidor:
 
 ```bash
-python3 manage.py runserver
+python3 manage.py runserver 0:8000
 ```
 
 A API estará disponível em `http://<ip_da_sua_maquina>:8000/`.
