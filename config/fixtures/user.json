@@ -3,8 +3,8 @@
         "model": "authentication.User",
         "pk": 1,
         "fields": {
-            "user_name": "admin",
-            "user_email": "admin@email.com",
+            "user_name": "usuario",
+            "user_email": "usuario@email.com",
             "user_cpf": "123.456.789-10",
             "password": "pbkdf2_sha256$870000$NM3W1rDNgyzn1l4UUvYbLH$Mqu+u5eLjl9xFUVs0eMfooEoeMXNYcgRQxX2INdsuPE=",
             "is_active": true,

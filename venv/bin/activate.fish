@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV /home/isacd/Documentos/repositorios/Autentica-o-Simples-com-Django-REST/venv
+set -gx VIRTUAL_ENV /home/isacd/Documentos/Repositorios/Authentication-backend-REST/venv
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"bin $PATH

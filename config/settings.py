@@ -1,12 +1,14 @@
 # Import necessary modules
 from pathlib import Path
 import datetime
+import os
+from dotenv import load_dotenv 
 
 # Define the base directory of the project
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Secret key for Django security features (should be kept secret in production)
-SECRET_KEY = 'django-insecure-kf@qpb!f)ron-4!+i6t!ww&kf4z&tow)5(&*tz9=c2tp!)b8m8'
+# Import enviroment variables
+load_dotenv(os.path.join(BASE_DIR, 'config', '.env'))
 
 # Enable debug mode (should be set to False in production)
 DEBUG = True
@@ -16,6 +18,9 @@ ALLOWED_HOSTS = [
     "localhost",
     "*"
 ]
+
+# Setting the secret key
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # Installed applications in the Django project
 INSTALLED_APPS = [
@@ -95,12 +100,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database configuration (using PostgreSQL)
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',  # Database engine
-        'NAME': 'auth',  # Database name
-        'USER': 'auth',  # Database user
-        'PASSWORD': 'root',  # Database password
-        'HOST': 'localhost',  # Database host
-        'PORT': '5432',  # Database port
+        'ENGINE': 'django.db.backends.postgresql', 
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_NAME'), 
+        'PASSWORD': os.getenv('DB_PASSWORD'),  
+        'HOST': os.getenv('DB_HOST'),  
+        'PORT': os.getenv('DB_PORT'),  
     }
 }
 
